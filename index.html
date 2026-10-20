@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#123d32" />
+    <meta
+      name="description"
+      content="Browse the Wellness Hub product catalogue: beauty, personal care, health supplements, nutrition, men's care and agricultural products."
+    />
+    <title>Wellness Hub | Product Catalogue</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="wellness-hub.png" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      WELLNESS • PERSONAL CARE • NUTRITION • EVERYDAY LIVING
+    </div>
+    <header class="nav">
+      <div class="navinner">
+        <a class="brand" href="#home"
+          ><div class="logo">✦</div>
+          <div>
+            <div class="brandname">Wellness Hub</div>
+            <div class="brandtag">Your product discovery space</div>
+          </div></a
+        >
+        <nav class="navlinks">
+          <a href="#categories">Categories</a
+          ><a href="#catalog">Product catalogue</a><a href="#about">About</a>
+        </nav>
+        <a
+          class="navcta"
+          href="https://wa.me/917981502710?text=Hello%20Wellness%20Hub%2C%20I%20have%20a%20product%20enquiry."
+          target="_blank"
+          rel="noopener"
+          >✆ WhatsApp us</a
+        >
+      </div>
+    </header>
+    <main id="home">
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="eyebrow">A thoughtful way to explore products</div>
+            <h1>Everyday choices.<br /><span>Wellness, made simple.</span></h1>
+            <p>
+              Explore the Wellness Hub product catalogue, from beauty and
+              personal care to nutrition, wellness and agricultural products.
+              Search by product name, compare listed DP and PV, and message us
+              for availability.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#catalog">Explore products <span>↗</span></a
+              ><a class="btn light" href="#categories">Browse categories</a>
+            </div>
+            <p class="hero-note">
+              Product information is based on the catalogue images provided.
+            </p>
+          </div>
+          <div class="hero-art">
+            <div class="art-label">THE WELLNESS HUB EDIT</div>
+            <div class="art-grid">
+              <div class="art-tile">
+                <div class="art-emoji">🌿</div>
+                <strong>Health & Nutrition</strong
+                ><small>Daily wellness essentials</small>
+              </div>
+              <div class="art-tile">
+                <div class="art-emoji">✨</div>
+                <strong>Beauty & Care</strong
+                ><small>Care for your routine</small>
+              </div>
+              <div class="art-tile">
+                <div class="art-emoji">🧴</div>
+                <strong>Personal Care</strong><small>Everyday favourites</small>
+              </div>
+              <div class="art-tile">
+                <div class="art-emoji">🌱</div>
+                <strong>Agri Products</strong><small>Crop-care range</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="trustrow">
+        <div class="trust">
+          <div class="trusticon">🔎</div>
+          <div><b>Easy discovery</b><span>Search by product name</span></div>
+        </div>
+        <div class="trust">
+          <div class="trusticon">🏷️</div>
+          <div><b>Listed pricing</b><span>DP and PV shown</span></div>
+        </div>
+        <div class="trust">
+          <div class="trusticon">💬</div>
+          <div><b>Direct enquiries</b><span>Chat on WhatsApp</span></div>
+        </div>
+        <div class="trust">
+          <div class="trusticon">📱</div>
+          <div><b>Mobile friendly</b><span>Browse on any device</span></div>
+        </div>
+      </div>
+      <section class="section" id="categories">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">Find your range</div>
+            <h2>Shop by category</h2>
+          </div>
+          <p>
+            Start with a category, or browse the complete product list below.
+          </p>
+        </div>
+        <div class="categories" id="categoryCards"></div>
+      </section>
+      <section class="catalog" id="catalog">
+        <div class="section">
+          <div class="sectionhead">
+            <div>
+              <div class="eyebrow">The product directory</div>
+              <h2>Explore the catalogue</h2>
+            </div>
+            <p>
+              Use search and filters to find a product. DP and PV are shown as
+              provided in your source images.
+            </p>
+          </div>
+          <div class="toolbar">
+            <div class="searchwrap">
+              <span class="searchicon">⌕</span
+              ><input
+                id="search"
+                type="search"
+                placeholder="Search products, e.g. Vitamin C, Face Wash…"
+                aria-label="Search products"
+              />
+            </div>
+            <select id="sort" aria-label="Sort products">
+              <option value="default">Sort: Recommended</option>
+              <option value="name">Name: A to Z</option>
+              <option value="priceLow">DP: Low to high</option>
+              <option value="priceHigh">DP: High to low</option>
+            </select>
+          </div>
+          <div class="filters" id="filters"></div>
+          <div class="resultline">
+            <span id="resultCount">All products</span
+            ><span>Tap “Ask about product” to enquire</span>
+          </div>
+          <div class="productgrid" id="productGrid"></div>
+        </div>
+      </section>
+      <section class="section" id="about">
+        <div class="sectionhead">
+          <div>
+            <div class="eyebrow">A little about us</div>
+            <h2>Welcome to Wellness Hub</h2>
+          </div>
+          <p>
+            A convenient place to explore product information and ask questions
+            before you buy.
+          </p>
+        </div>
+        <div
+          style="
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 24px;
+            line-height: 1.8;
+            color: #58685f;
+            font-size: 14px;
+          "
+        >
+          <strong style="color: var(--green)">Our approach</strong><br />We aim
+          to make product discovery simple, with clear categories and product
+          details. If you need help with availability, current pricing, sizes or
+          official product instructions, contact us directly. Product
+          suitability varies by person; please read labels and consult a
+          qualified professional when appropriate.
+        </div>
+      </section>
+      <section class="contact">
+        <div class="contactinner">
+          <div>
+            <h2>Need help finding a product?</h2>
+            <p>
+              Send us the product name and we’ll help you check the information
+              and availability.<br />WhatsApp: +91 79815 02710
+            </p>
+          </div>
+          <a
+            class="btn"
+            href="https://wa.me/917981502710?text=Hello%20Wellness%20Hub%2C%20please%20help%20me%20with%20a%20product%20enquiry."
+            target="_blank"
+            rel="noopener"
+            >Message Wellness Hub ↗</a
+          >
+        </div>
+      </section>
+    </main>
+    <div class="notice">
+      <div class="noticebox">
+        <strong>Catalogue note:</strong> DP and PV values are transcribed from
+        the images supplied by the site owner and may not reflect current
+        prices, stock or official company updates. 
+      </div>
+    </div>
+    <footer class="footer">
+      <span
+        >© <span id="year"></span> <strong>Wellness Hub</strong> · Product
+        catalogue</span
+      ><span
+        >Built for easy browsing ·
+        <a href="https://wa.me/917981502710" target="_blank" rel="noopener"
+          >WhatsApp support</a
+        ></span
+      >
+    </footer>
+    <script>
+      const wa = "https://wa.me/917981502710?text=";
+      // Direct wa.me anchors are used so mobile browsers can hand off to WhatsApp reliably.
+      // Direct wa.me anchors are used so mobile browsers can hand off to WhatsApp reliably.
+      const categories = [
+        {
+          id: "beauty",
+          name: "Beauty Products",
+          emoji: "✨",
+          desc: "Skin Formula, serums, masks and skincare.",
+          img: "assets/beauty-products.png",
+        },
+        {
+          id: "agri",
+          name: "Agri Products",
+          emoji: "🌱",
+          desc: "Agri-Moss, Agri 82, Agri-Nanotek and more.",
+          img: "assets/agri-products.png",
+        },
+        {
+          id: "personal",
+          name: "Personal Care & Lifestyle",
+          emoji: "🧴",
+          desc: "Face care, hair care, body care, fragrances and cosmetics.",
+          img: "assets/personal-care-products.png",
+        },
+        {
+          id: "supplements",
+          name: "Health Supplements",
+          emoji: "🌿",
+          desc: "Nutrition, vitamins, herbal supplements and wellness products.",
+          img: "assets/health-supplements.png",
+        },
+        {
+          id: "nutrition",
+          name: "Veslim, Protein & Heart Health",
+          emoji: "🥤",
+          desc: "Protein powders, shakes, sprays and heart-health range.",
+          img: "assets/veslim-protein-heart-health.png",
+        },
+        {
+          id: "mens",
+          name: "Men’s Care & Ayusante",
+          emoji: "🧔",
+          desc: "Men’s grooming, Ayusante and Mach-Drive range.",
+          img: "assets/mens-ayusante.png",
+        },
+      ];
+      // Values and names transcribed from the owner-provided catalogue images.
+      const products = [
+        // Beauty
+        ["Hydrating Sunscreen Serum SPF 50+", "beauty", 1155, 34.67],
+        ["Deep Cleansing Oil", "beauty", 1433, 43],
+        ["Vitamin C Serum", "beauty", 1167, 35],
+        ["Brightening Treatment", "beauty", 2533, 76],
+        ["Youth Elixir", "beauty", 1788, 53.67],
+        ["Intense Hydration", "beauty", 1372, 41.17],
+        ["Blemish Gel", "beauty", 1109, 33.27],
+        ["Pro-prep Primer", "beauty", 771, 23],
+        ["Glow Sheet Mask – Intense Hydration", "beauty", 311, 9.33],
+        ["Glow Sheet Mask – Vitamin E", "beauty", 311, 9.33],
+        ["Glow Sheet Mask – Vitamin C", "beauty", 311, 9.33],
+        ["Under Eye Serum", "beauty", 1200, 36],
+        ["Radiant Glow Face Mist", "beauty", 574, 17.2],
+        // Agri
+        ["Agri-Humic Granules (5 kg)", "agri", 822, 24.67],
+        ["Agri Aquagel (1 kg)", "agri", 2000, 60],
+        ["Agri Humic (500 ml)", "agri", 644, 19.33],
+        ["Agri-ProteK (250 g)", "agri", 749, 22.5],
+        ["Agri-Moss (100 ml)", "agri", 386, 11.6],
+        ["Agri-Nanotek (250 g)", "agri", 749, 22.5],
+        ["Agri 82 (3 × 100 ml)", "agri", 481, 12],
+        ["Agri-Gold (100 g)", "agri", 594, 17.83],
+        ["Agri-Nanotek (500 g)", "agri", 1483, 44.5],
+        ["Agri 82 with Nanotechnology (500 ml)", "agri", 572, 14.31],
+        ["Agri-ProteK (500 g)", "agri", 1483, 44.5],
+        ["Agri 82 (3 × 100 ml) with Nanotechnology", "agri", 386, 11.16],
+        ["Agri 82 (500 ml)", "agri", 656, 16.39],
+        ["Agri 82 (5 L)", "agri", 5222, 130.56],
+        ["Agri 82 with Nanotechnology (5 L)", "agri", 3879, 114.44],
+        ["Agri-Moss (500 ml)", "agri", 1772, 53.17],
+        // Personal care
+        ["Lightening Cream", "personal", 416, 12.5],
+        ["Day Cream", "personal", 366, 11],
+        ["Face Scrub", "personal", 311, 9.33],
+        ["Sunscreen 40+", "personal", 533, 16],
+        ["Hair Conditioner", "personal", 256, 7.67],
+        ["Hair Oil", "personal", 198, 6.6],
+        ["Deep Cleanse", "personal", 183, 4.58],
+        ["Moisture", "personal", 183, 4.58],
+        ["DailyCare", "personal", 183, 4.58],
+        ["Relief Cream", "personal", 155, 4.67],
+        ["Foot Cream", "personal", 178, 5.32],
+        ["Face Wash", "personal", 188, 5.68],
+        ["Sunscreen 30+", "personal", 284, 8.33],
+        ["Facial Kit", "personal", 733, 21.33],
+        ["Fairness Cream", "personal", 200, 5],
+        ["Night Cream", "personal", 289, 8.67],
+        ["BB Cream", "personal", 400, 12],
+        ["Aura Perfume", "personal", 305, 9.17],
+        ["Arctic Perfume", "personal", 305, 9.17],
+        ["Hand & Body Lotion", "personal", 306, 8],
+        ["Daily Moisturiser", "personal", 344, 10.33],
+        ["Cleanser + Toner", "personal", 366, null],
+        ["Hand Wash", "personal", 172, 4.73],
+        ["Body Butter", "personal", 428, 10.69],
+        ["Vit C Foam", "personal", 394, 11.83],
+        ["Vit C Cream", "personal", 289, 8.67],
+        ["Active Deo", "personal", 244, 6.11],
+        ["Pulse", "personal", 305, 9.17],
+        ["Rapture", "personal", 219, 5.5],
+        ["Captive Perfume", "personal", 94, 2.83],
+        ["Charisma Perfume", "personal", 94, 2.83],
+        ["Force Fresh", "personal", 72, 1.99],
+        ["Enchant", "personal", 72, 1.99],
+        // Health supplements
+        ["Veg-Collagen", "supplements", 819, 24.67],
+        ["Calcium", "supplements", 271, 8.17],
+        ["Glucosamine (60)", "supplements", 528, 15.83],
+        ["Glucosamine (100)", "supplements", 816, 24.5],
+        ["Collagen", "supplements", 777, 23.33],
+        ["Dew Garden", "supplements", 246, 7.37],
+        ["Shatavari Max", "supplements", 484, 14.53],
+        ["Cranberry", "supplements", 1622, 48.67],
+        ["Hair, Nail & Skin", "supplements", 550, 16.5],
+        ["Iron & Folic", "supplements", 245, 7.37],
+        ["Curcumin +", "supplements", 938, 28.17],
+        ["Ganoderma", "supplements", 866, 26],
+        ["Fibre", "supplements", 943, 28.33],
+        ["Foot Patches", "supplements", 1466, 36.67],
+        ["Eye Support", "supplements", 572, 17.17],
+        ["Spirulina", "supplements", 416, 12.5],
+        ["Amla", "supplements", 199, 6],
+        ["Aloevera", "supplements", 309, 9.3],
+        ["Noni", "supplements", 560, 18.24],
+        ["Colostrum", "supplements", 644, 19.33],
+        ["Multi Vita+Min Gummies", "supplements", 732, 22],
+        ["Energy Booster", "supplements", 921, 27.67],
+        ["Neem", "supplements", 394, 11.83],
+        ["Seabuckthorn", "supplements", 844, 25.33],
+        ["Combiotics", "supplements", 577, 17.33],
+        // Nutrition, veslim and heart
+        ["Vitamin D Sublingual Spray", "nutrition", 469, 14.07],
+        ["Vitamin C Sublingual Spray", "nutrition", 469, 14.07],
+        ["Biotin Sublingual Spray", "nutrition", 642, 20.23],
+        ["B12 Sublingual Spray", "nutrition", 560, 15.83],
+        ["Melatonin Sublingual Spray", "nutrition", 537, 25.33],
+        ["Cell Power", "nutrition", 1627, 48.83],
+        ["Cell-U-Lean", "nutrition", 1242, 37.27],
+        ["Protein Powder (200 g)", "nutrition", 973, 29.2],
+        ["Invigo Vanilla (200 g)", "nutrition", 664, 19.93],
+        ["Veslim Shake’s", "nutrition", 1810, 54.3],
+        ["ShakeMix", "nutrition", 517, 6.47],
+        ["Protein Powder (400 g)", "nutrition", 1830, 54.09],
+        ["Invigo Chocolate (200 g)", "nutrition", 710, 21.33],
+        ["EnergyDrinkMix", "nutrition", 660, 19.8],
+        ["Veslim Capsules", "nutrition", 1088, 32.67],
+        ["Invigo Chocolate (400 g)", "nutrition", 1420, 42.63],
+        ["CMD", "nutrition", 1106, 33.17],
+        ["Veslim Tea", "nutrition", 788, 23.67],
+        ["Flaxoil", "nutrition", 611, 18.33],
+        ["Krill Oil", "nutrition", 1300, 39],
+        ["L-Arginine", "nutrition", 1354, 40.5],
+        ["Personalised Protein (400 g)", "nutrition", 1909, 58.7],
+        ["Personalised Protein (200 g)", "nutrition", 1024, 29.33],
+        ["CoQ10", "nutrition", 994, 29.83],
+        ["Rice Bran Oil (2 L)", "nutrition", 565, 9.42],
+        // Men's care and Ayusante
+        ["Breakfast Cereal", "mens", 300, 7.5],
+        ["Truman Bar", "mens", 116, 3.5],
+        ["Truman Face Wash", "mens", 277, 8.33],
+        ["Truman Deo Spray", "mens", 322, 9.67],
+        ["Ayusante Respocare", "mens", 655, 19.67],
+        ["Ayusante Prostate Care", "mens", 463, 13.9],
+        ["Ayusante KidneyHealth", "mens", 688, 20.67],
+        ["Ayusante Vital Complex", "mens", 800, 22.13],
+        ["Ayusante Liver Health", "mens", 685, 20.57],
+        ["Ayusante Procad", "mens", 856, 25.7],
+        ["Ayusante Toxclean", "mens", 738, 22.13],
+        ["Ayusante Gluco Health", "mens", 711, 21.37],
+        ["Mach-Drive 2N", "mens", 1610, 48.33],
+        ["Mach-Drive 4N", "mens", 2055, 61.67],
+      ];
+      const byId = (id) => categories.find((c) => c.id === id);
+      let active = "all";
+      const money = (n) =>
+        n == null
+          ? "Not listed"
+          : "₹" +
+            Number(n).toLocaleString("en-IN", { maximumFractionDigits: 2 });
+      function renderCategories() {
+        document.getElementById("categoryCards").innerHTML = categories
+          .map(
+            (c) =>
+              `<article class="category" tabindex="0" role="button" onclick="chooseCategory('${c.id}')" onkeydown="if(event.key==='Enter')chooseCategory('${c.id}')"><div class="catvisual"><img src="${c.img}" alt="${c.name} catalogue sheet" loading="lazy"><div class="catemoji">${c.emoji}</div></div><div class="catinfo"><h3>${c.name}</h3><p>${c.desc}</p><div class="catfoot"><span>${products.filter((p) => p[1] === c.id).length} listed products</span><span>Explore ↗</span></div></div></article>`,
+          )
+          .join("");
+      }
+      function renderFilters() {
+        document.getElementById("filters").innerHTML =
+          `<button class="filter ${active === "all" ? "active" : ""}" onclick="chooseCategory('all')">All products (${products.length})</button>` +
+          categories
+            .map(
+              (c) =>
+                `<button class="filter ${active === c.id ? "active" : ""}" onclick="chooseCategory('${c.id}')">${c.emoji} ${c.name}</button>`,
+            )
+            .join("");
+      }
+      const productImages = {
+        "Hydrating Sunscreen Serum SPF 50+":
+          "assets/products/beauty-01-hydrating-sunscreen-serum-spf-50.jpg",
+        "Deep Cleansing Oil":
+          "assets/products/beauty-02-deep-cleansing-oil.jpg",
+        "Vitamin C Serum": "assets/products/beauty-03-vitamin-c-serum.jpg",
+        "Brightening Treatment":
+          "assets/products/beauty-04-brightening-treatment.jpg",
+        "Youth Elixir": "assets/products/beauty-05-youth-elixir.jpg",
+        "Intense Hydration": "assets/products/beauty-06-intense-hydration.jpg",
+        "Blemish Gel": "assets/products/beauty-07-blemish-gel.jpg",
+        "Pro-prep Primer": "assets/products/beauty-08-pro-prep-primer.jpg",
+        "Glow Sheet Mask – Intense Hydration":
+          "assets/products/beauty-09-glow-sheet-mask-intense-hydration.jpg",
+        "Glow Sheet Mask – Vitamin E":
+          "assets/products/beauty-10-glow-sheet-mask-vitamin-e.jpg",
+        "Glow Sheet Mask – Vitamin C":
+          "assets/products/beauty-11-glow-sheet-mask-vitamin-c.jpg",
+        "Under Eye Serum": "assets/products/beauty-12-under-eye-serum.jpg",
+        "Radiant Glow Face Mist":
+          "assets/products/beauty-13-radiant-glow-face-mist.jpg",
+        "Agri-Humic Granules (5 kg)":
+          "assets/products/agri-01-agri-humic-granules-5-kg.jpg",
+        "Agri Aquagel (1 kg)": "assets/products/agri-02-agri-aquagel-1-kg.jpg",
+        "Agri Humic (500 ml)": "assets/products/agri-03-agri-humic-500-ml.jpg",
+        "Agri-ProteK (250 g)": "assets/products/agri-04-agri-protek-250-g.jpg",
+        "Agri-Moss (100 ml)": "assets/products/agri-05-agri-moss-100-ml.jpg",
+        "Agri-Nanotek (250 g)":
+          "assets/products/agri-06-agri-nanotek-250-g.jpg",
+        "Agri 82 (3 × 100 ml)": "assets/products/agri-07-agri-82-3-100-ml.jpg",
+        "Agri-Gold (100 g)": "assets/products/agri-08-agri-gold-100-g.jpg",
+        "Agri-Nanotek (500 g)":
+          "assets/products/agri-09-agri-nanotek-500-g.jpg",
+        "Agri 82 with Nanotechnology (500 ml)":
+          "assets/products/agri-10-agri-82-with-nanotechnology-500-ml.jpg",
+        "Agri-ProteK (500 g)": "assets/products/agri-11-agri-protek-500-g.jpg",
+        "Agri 82 (3 × 100 ml) with Nanotechnology":
+          "assets/products/agri-12-agri-82-3-100-ml-with-nanotechnology.jpg",
+        "Agri 82 (500 ml)": "assets/products/agri-13-agri-82-500-ml.jpg",
+        "Agri 82 (5 L)": "assets/products/agri-14-agri-82-5-l.jpg",
+        "Agri 82 with Nanotechnology (5 L)":
+          "assets/products/agri-15-agri-82-with-nanotechnology-5-l.jpg",
+        "Agri-Moss (500 ml)": "assets/products/agri-16-agri-moss-500-ml.jpg",
+        "Lightening Cream": "assets/products/personal-01-lightening-cream.jpg",
+        "Day Cream": "assets/products/personal-02-day-cream.jpg",
+        "Face Scrub": "assets/products/personal-03-face-scrub.jpg",
+        "Sunscreen 40+": "assets/products/personal-04-sunscreen-40.jpg",
+        "Hair Conditioner": "assets/products/personal-05-hair-conditioner.jpg",
+        "Hair Oil": "assets/products/personal-06-hair-oil.jpg",
+        "Deep Cleanse": "assets/products/personal-07-deep-cleanse.jpg",
+        Moisture: "assets/products/personal-08-moisture.jpg",
+        DailyCare: "assets/products/personal-09-dailycare.jpg",
+        "Relief Cream": "assets/products/personal-10-relief-cream.jpg",
+        "Foot Cream": "assets/products/personal-11-foot-cream.jpg",
+        "Face Wash": "assets/products/personal-12-face-wash.jpg",
+        "Sunscreen 30+": "assets/products/personal-13-sunscreen-30.jpg",
+        "Facial Kit": "assets/products/personal-14-facial-kit.jpg",
+        "Fairness Cream": "assets/products/personal-15-fairness-cream.jpg",
+        "Night Cream": "assets/products/personal-16-night-cream.jpg",
+        "BB Cream": "assets/products/personal-17-bb-cream.jpg",
+        "Aura Perfume": "assets/products/personal-18-aura-perfume.jpg",
+        "Arctic Perfume": "assets/products/personal-19-arctic-perfume.jpg",
+        "Hand & Body Lotion":
+          "assets/products/personal-20-hand-body-lotion.jpg",
+        "Daily Moisturiser":
+          "assets/products/personal-21-daily-moisturiser.jpg",
+        "Cleanser + Toner": "assets/products/personal-22-cleanser-toner.jpg",
+        "Hand Wash": "assets/products/personal-23-hand-wash.jpg",
+        "Body Butter": "assets/products/personal-24-body-butter.jpg",
+        "Vit C Foam": "assets/products/personal-25-vit-c-foam.jpg",
+        "Vit C Cream": "assets/products/personal-26-vit-c-cream.jpg",
+        "Active Deo": "assets/products/personal-27-active-deo.jpg",
+        Pulse: "assets/products/personal-28-pulse.jpg",
+        Rapture: "assets/products/personal-29-rapture.jpg",
+        "Captive Perfume": "assets/products/personal-30-captive-perfume.jpg",
+        "Charisma Perfume": "assets/products/personal-31-charisma-perfume.jpg",
+        "Force Fresh": "assets/products/personal-32-force-fresh.jpg",
+        Enchant: "assets/products/personal-33-enchant.jpg",
+        "Veg-Collagen": "assets/products/supplements-01-veg-collagen.jpg",
+        Calcium: "assets/products/supplements-02-calcium.jpg",
+        "Glucosamine (60)": "assets/products/supplements-03-glucosamine-60.jpg",
+        "Glucosamine (100)":
+          "assets/products/supplements-04-glucosamine-100.jpg",
+        Collagen: "assets/products/supplements-05-collagen.jpg",
+        "Dew Garden": "assets/products/supplements-06-dew-garden.jpg",
+        "Shatavari Max": "assets/products/supplements-07-shatavari-max.jpg",
+        Cranberry: "assets/products/supplements-08-cranberry.jpg",
+        "Hair, Nail & Skin":
+          "assets/products/supplements-09-hair-nail-skin.jpg",
+        "Iron & Folic": "assets/products/supplements-10-iron-folic.jpg",
+        "Curcumin +": "assets/products/supplements-11-curcumin.jpg",
+        Ganoderma: "assets/products/supplements-12-ganoderma.jpg",
+        Fibre: "assets/products/supplements-13-fibre.jpg",
+        "Foot Patches": "assets/products/supplements-14-foot-patches.jpg",
+        "Eye Support": "assets/products/supplements-15-eye-support.jpg",
+        Spirulina: "assets/products/supplements-16-spirulina.jpg",
+        Amla: "assets/products/supplements-17-amla.jpg",
+        Aloevera: "assets/products/supplements-18-aloevera.jpg",
+        Noni: "assets/products/supplements-19-noni.jpg",
+        Colostrum: "assets/products/supplements-20-colostrum.jpg",
+        "Multi Vita+Min Gummies":
+          "assets/products/supplements-21-multi-vita-min-gummies.jpg",
+        "Energy Booster": "assets/products/supplements-22-energy-booster.jpg",
+        Neem: "assets/products/supplements-23-neem.jpg",
+        Seabuckthorn: "assets/products/supplements-24-seabuckthorn.jpg",
+        Combiotics: "assets/products/supplements-25-combiotics.jpg",
+        "Vitamin D Sublingual Spray":
+          "assets/products/nutrition-01-vitamin-d-sublingual-spray.jpg",
+        "Vitamin C Sublingual Spray":
+          "assets/products/nutrition-02-vitamin-c-sublingual-spray.jpg",
+        "Biotin Sublingual Spray":
+          "assets/products/nutrition-03-biotin-sublingual-spray.jpg",
+        "B12 Sublingual Spray":
+          "assets/products/nutrition-04-b12-sublingual-spray.jpg",
+        "Melatonin Sublingual Spray":
+          "assets/products/nutrition-05-melatonin-sublingual-spray.jpg",
+        "Cell Power": "assets/products/nutrition-06-cell-power.jpg",
+        "Cell-U-Lean": "assets/products/nutrition-07-cell-u-lean.jpg",
+        "Protein Powder (200 g)":
+          "assets/products/nutrition-08-protein-powder-200-g.jpg",
+        "Invigo Vanilla (200 g)":
+          "assets/products/nutrition-09-invigo-vanilla-200-g.jpg",
+        "Veslim Shake’s": "assets/products/nutrition-10-veslim-shake-s.jpg",
+        ShakeMix: "assets/products/nutrition-11-shakemix.jpg",
+        "Protein Powder (400 g)":
+          "assets/products/nutrition-12-protein-powder-400-g.jpg",
+        "Invigo Chocolate (200 g)":
+          "assets/products/nutrition-13-invigo-chocolate-200-g.jpg",
+        EnergyDrinkMix: "assets/products/nutrition-14-energydrinkmix.jpg",
+        "Veslim Capsules": "assets/products/nutrition-15-veslim-capsules.jpg",
+        "Invigo Chocolate (400 g)":
+          "assets/products/nutrition-16-invigo-chocolate-400-g.jpg",
+        CMD: "assets/products/nutrition-17-cmd.jpg",
+        "Veslim Tea": "assets/products/nutrition-18-veslim-tea.jpg",
+        Flaxoil: "assets/products/nutrition-19-flaxoil.jpg",
+        "Krill Oil": "assets/products/nutrition-20-krill-oil.jpg",
+        "L-Arginine": "assets/products/nutrition-21-l-arginine.jpg",
+        "Personalised Protein (400 g)":
+          "assets/products/nutrition-22-personalised-protein-400-g.jpg",
+        "Personalised Protein (200 g)":
+          "assets/products/nutrition-23-personalised-protein-200-g.jpg",
+        CoQ10: "assets/products/nutrition-24-coq10.jpg",
+        "Rice Bran Oil (2 L)":
+          "assets/products/nutrition-25-rice-bran-oil-2-l.jpg",
+        "Breakfast Cereal": "assets/products/mens-01-breakfast-cereal.jpg",
+        "Truman Bar": "assets/products/mens-02-truman-bar.jpg",
+        "Truman Face Wash": "assets/products/mens-03-truman-face-wash.jpg",
+        "Truman Deo Spray": "assets/products/mens-04-truman-deo-spray.jpg",
+        "Ayusante Respocare": "assets/products/mens-05-ayusante-respocare.jpg",
+        "Ayusante Prostate Care":
+          "assets/products/mens-06-ayusante-prostate-care.jpg",
+        "Ayusante KidneyHealth":
+          "assets/products/mens-07-ayusante-kidneyhealth.jpg",
+        "Ayusante Vital Complex":
+          "assets/products/mens-08-ayusante-vital-complex.jpg",
+        "Ayusante Liver Health":
+          "assets/products/mens-09-ayusante-liver-health.jpg",
+        "Ayusante Procad": "assets/products/mens-10-ayusante-procad.jpg",
+        "Ayusante Toxclean": "assets/products/mens-11-ayusante-toxclean.jpg",
+        "Ayusante Gluco Health":
+          "assets/products/mens-12-ayusante-gluco-health.jpg",
+        "Mach-Drive 2N": "assets/products/mens-13-mach-drive-2n.jpg",
+        "Mach-Drive 4N": "assets/products/mens-14-mach-drive-4n.jpg",
+      };
+      function renderProducts() {
+        let q = document.getElementById("search").value.trim().toLowerCase();
+        let arr = products.filter(
+          (p) =>
+            (active === "all" || p[1] === active) &&
+            p[0].toLowerCase().includes(q),
+        );
+        const sort = document.getElementById("sort").value;
+        if (sort === "name") arr.sort((a, b) => a[0].localeCompare(b[0]));
+        if (sort === "priceLow")
+          arr.sort((a, b) => (a[2] ?? Infinity) - (b[2] ?? Infinity));
+        if (sort === "priceHigh")
+          arr.sort((a, b) => (b[2] ?? -Infinity) - (a[2] ?? -Infinity));
+        document.getElementById("resultCount").textContent =
+          `Showing ${arr.length} of ${products.length} listed products`;
+        document.getElementById("productGrid").innerHTML = arr.length
+          ? arr
+              .map((p) => {
+                const c = byId(p[1]);
+                const msg =
+                  "Hello Wellness Hub, I would like to enquire about " +
+                  p[0] +
+                  ". Please confirm current price and availability.";
+                const link =
+                  "https://wa.me/917981502710?text=" + encodeURIComponent(msg);
+                return `<article class="product"><div class="productphoto"><img src="${productImages[p[0]] || c.img}" alt="${p[0]} product image from supplied catalogue" loading="lazy" onerror="this.onerror=null;this.src=c.img;this.alt=c.name+' catalogue reference';this.classList.add('sheet-fallback')"></div><div class="producttop"><span class="badge">${c.name}</span></div><h3>${p[0]}</h3><div class="size">Product details & availability on enquiry</div><div class="prices"><div class="price"><small>DP listed</small><strong>${money(p[2])}</strong></div><div class="pv"><small>PV</small><br>${p[3] == null ? "Not listed" : p[3]}</div></div><a class="ask" href="${link}" target="_blank" rel="noopener noreferrer" aria-label="Ask Wellness Hub about ${p[0]} on WhatsApp">Ask about product ↗</a></article>`;
+              })
+              .join("")
+          : `<div class="empty">No products match that search. Try another name or category.</div>`;
+      }
+      function chooseCategory(id) {
+        active = id;
+        renderFilters();
+        renderProducts();
+        document
+          .getElementById("catalog")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      function askProduct(name) {
+        window.open(
+          wa +
+            encodeURIComponent(
+              "Hello Wellness Hub, I would like to enquire about " +
+                name +
+                ". Please confirm current price and availability.",
+            ),
+          "_blank",
+          "noopener",
+        );
+      }
+      document
+        .getElementById("search")
+        .addEventListener("input", renderProducts);
+      document
+        .getElementById("sort")
+        .addEventListener("change", renderProducts);
+      document.getElementById("year").textContent = new Date().getFullYear();
+      renderCategories();
+      renderFilters();
+      renderProducts();
+    </script>
+  </body>
+</html>

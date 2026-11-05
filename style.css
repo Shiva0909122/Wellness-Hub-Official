@@ -31,6 +31,70 @@
         color: var(--ink);
         background: var(--paper);
       }
+
+
+.topbar {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #123c2d;
+  color: #ffffff;
+  padding: 10px 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.headline-track {
+  display: flex;
+  width: max-content;
+  animation: headlineScroll 25s linear infinite;
+}
+
+.headline-track span {
+  padding: 0 35px;
+}
+
+@keyframes headlineScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.topbar:hover .headline-track {
+  animation-play-state: paused;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       a {
         color: inherit;
         text-decoration: none;

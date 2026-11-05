@@ -37,16 +37,4 @@ Contact us for product information, availability, and enquiries.
 ## 🌐 Visit Our Website
 
 [Visit Wellness Hub](https://shiva0909122.github.io/Wellness-Hub-Official/)
-
-*The website link will work after GitHub Pages has successfully published the site.*
-
-## ⚠️ Disclaimer
-
-Wellness Hub is an independently operated product information and enquiry website. Vestige and its product names and trademarks belong to their respective owners. This website is not intended to represent the official corporate website of Vestige.
-
-Product availability and information should be confirmed before purchase.
-
----
-
-**Wellness Hub**  
-*Discover Wellness. Choose Better.*
+Channel : https://www.youtube.com/@winningwarriors9
